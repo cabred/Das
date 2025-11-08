@@ -1,0 +1,19 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<div class='container'>
+  <div class='card'>
+    <p>Búsqueda: <strong>{{ query }}</strong></p>
+    <div class='tags'>
+      {% if genre %}<span class='tag'>Género: {{ genre }}</span>{% endif %}
+      {% if year %}<span class='tag'>Año: {{ year }}</span>{% endif %}
+      {% if rating %}<span class='tag'>Calificación: {{ rating }}+</span>{% endif %}
+    </div>
+  </div>
+
+  <div class='empty-state'>
+    <div class='icon'>😞</div>
+    <p>No se encontraron resultados</p>
+    <a href='/' class='btn-outline'>Limpiar filtros</a>
+  </div>
+</div>
+{% endblock %}

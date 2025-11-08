@@ -1,0 +1,52 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<div class='container'>
+  <div class='card'>
+    <form method='get' action='/buscar'>
+      <input name='q' type='text' placeholder='Buscar película...' class='input-full' />
+
+      <div class='filters'>
+        <div>
+          <label>Género</label>
+          <select name='genre'>
+            <option value=''>Seleccionar...</option>
+            <option>Acción</option>
+            <option>Comedia</option>
+            <option>Drama</option>
+            <option>Ciencia Ficción</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Año</label>
+          <select name='year'>
+            <option value=''>Seleccionar...</option>
+            <option>2024</option>
+            <option>2023</option>
+            <option>2020</option>
+            <option>2014</option>
+            <option>1999</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Calificación</label>
+          <select name='rating'>
+            <option value=''>Seleccionar...</option>
+            <option value='9'>9+ estrellas</option>
+            <option value='8'>8+ estrellas</option>
+            <option value='7'>7+ estrellas</option>
+          </select>
+        </div>
+      </div>
+
+      <button type='submit' class='btn-primary'>Buscar</button>
+    </form>
+  </div>
+
+  <div class='empty-state'>
+    <div class='icon'>🔍</div>
+    <p>Empieza buscando una película</p>
+  </div>
+</div>
+{% endblock %}

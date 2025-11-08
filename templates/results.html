@@ -1,0 +1,25 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<div class='container'>
+  <div class='card'>
+    <p>Resultados para: <strong>{{ query }}</strong></p>
+    <div class='tags'>
+      {% if genre %}<span class='tag'>Género: {{ genre }}</span>{% endif %}
+      {% if year %}<span class='tag'>Año: {{ year }}</span>{% endif %}
+      {% if rating %}<span class='tag'>Calificación: {{ rating }}+</span>{% endif %}
+    </div>
+  </div>
+
+  {% for movie in movies %}
+  <div class='card movie-card'>
+    <div class='movie-info'>
+      <div>
+        <h3>{{ movie.title }}</h3>
+        <p>Género: {{ movie.genre }} | Año: {{ movie.year }}</p>
+      </div>
+      <div class='rating'>⭐ {{ movie.rating }}</div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
